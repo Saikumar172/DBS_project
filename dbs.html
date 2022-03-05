@@ -1,0 +1,81 @@
+<!DOCTYPE html>    
+<html>    
+<head>    
+    <title>Login Form</title>    
+    <link rel="stylesheet" href="dbsstyle.css">   
+    <script>
+
+        function validate() {
+            
+            var m = document.getElementById("mail").value ;
+            var u = document.getElementById("uname").value ;
+            var p = document.getElementById("pass").value;
+
+            let l = m.length ;
+
+            var format = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+
+            if (m == "") {
+                alert('please enter your mail!');
+                return false ;
+            }
+            else if ((m.indexOf('@') == -1) || (m.index('@') == l-1)) {
+                alert('please enter a proper mail!');
+            }
+            if (u == "") {
+                alert('please enter your username!');
+            }
+            if (p.length < 6) {
+                alert('Please enter atleast six characters!');
+            }
+            if (format.test(p)) {
+                alert('Congrats, All fields are validated!');
+                return true ;
+            }
+            else {
+                alert('please enter a proper password!');
+            }
+
+        }
+
+    </script> 
+</head>    
+<body>    
+    <img src="DBS-Bank-India.jpg" alt="DBS">    
+    <div class="login"> 
+        <h1>Wealth Manager/ HNIs</h1><br>   
+        <form id="login" action="#" onsubmit="return validate()"> 
+
+            <label><b>Email   
+            </b><br>
+            </label>    
+            <input type="text" name="email" id="mail" placeholder="email">    
+            <br><br>
+            
+            <label><b>User Name 
+            </b>    
+            </label>    
+            <input type="text" name="Uname" id="uname" placeholder="Username">    
+            <br><br>  
+
+            <label><b>Password     
+            </b>    
+            </label>    
+            <input type="text" name="Pass" id="pass" placeholder="Password">    
+            <br><br><br>
+
+            <button type="submit" id="log">Log In</button>  
+            <br><br>
+
+
+            <input type="checkbox" id="check">    
+            <span>Remember me</span>    
+            <br><br>   
+
+            <div class="fg">
+            <a href="#">Forgot Password ?</a>
+            </div>    
+        </form>     
+    </div>    
+</body>    
+</html>  
